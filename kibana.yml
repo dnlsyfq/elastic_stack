@@ -1,0 +1,3 @@
+server.port: 8080
+server.hosts: "<master node private ip>"
+

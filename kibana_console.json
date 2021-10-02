@@ -1,0 +1,53 @@
+GET _cat/nodes?v
+GET _cat/indices?v
+
+PUT bank 
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  }
+}
+
+PUT shakespeare
+{
+  "mappings": {
+    "properties": {
+      "speaker":{
+        "type":"keyword"
+      },
+      "play_name":{
+        "type":"keyword"
+      },
+      "line_id":{
+        "type":"integer"
+      },
+      "speech_number":{
+        "type":"integer"
+      }
+    }
+  },
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  }
+}
+
+PUT logs
+{
+  "mappings": {
+    "properties": {
+      "geo":{
+        "properties": {
+          "coordinates":{
+            "type":"geo_point"
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  }
+}

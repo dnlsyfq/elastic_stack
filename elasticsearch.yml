@@ -26,7 +26,7 @@ node.ml: false
 # data-2 
 
 cluster.name: playground
-node.name: data-1
+node.name: data-2
 network.host: [_local_,_site_]
 discovery.seed_hosts: ["172.31.31.90"]
 cluster.initial_master_nodes: ["master-1"]
