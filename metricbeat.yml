@@ -1,0 +1,5 @@
+setup.kibana:
+  host: "<master node private ip>:8080"
+
+output.elasticsearch:
+  hosts: ["<master node private ip>:9200"]

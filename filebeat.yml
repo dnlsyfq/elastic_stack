@@ -1,0 +1,5 @@
+
+host: "<master node private ip>:8080"
+hosts: ["<master node private ip>:9200"]
+username: "elastic"
+password: "la_elastic_5034"

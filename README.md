@@ -536,3 +536,29 @@ GET logs/_search
 }
 
 ```
+
+# Collecting and Shipping Logs with Filebeat
+
+* master & data node
+```
+curl -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.0-x86_64.rpm
+rpm --install filebeat-7.6.0-x86_64.rpm
+systemctl enable filebeat
+vim /etc/filebeat/filebeat.yml
+filebeat modules enable system
+filebeat setup
+systemctl start filebeat
+curl localhost:9200/_cat/indices?v -u elastic
+```
+
+# Collecting and Shipping System Telemetry with Metricbeat
+
+* master
+```
+curl -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.0-x86_64.rpm
+rpm --install metricbeat-7.6.0-x86_64.rpm
+vim /etc/metricbeat/metricbeat.yml
+metricbeat modules list
+metricbeat setup
+systemctl start metricbeat
+```
